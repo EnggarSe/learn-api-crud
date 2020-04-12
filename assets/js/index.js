@@ -42,7 +42,7 @@ const userLogin = (event) => {
                     localStorage.setItem("userData", JSON.stringify(user[i]))
                 }
                 alert("success");
-                window.location.href = `${window.origin}/dashboard.html`
+                window.location.href = `${window.origin}/formMovie.html`
                 break;
             }
         }
