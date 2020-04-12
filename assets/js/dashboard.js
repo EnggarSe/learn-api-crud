@@ -3,6 +3,12 @@ const urlUsers = "https://5e8ecf49fe7f2a00165ee9ff.mockapi.io/users"
 const movies = [];
 const tampilan = document.getElementById("main");
 
+let check = localStorage.getItem('isLogin');
+
+if(check != 'true'){
+    window.location.href = `${window.origin}/index.html`
+}
+
 const getLocalStorage = () => {
     return localStorage.getItem("userData")===null
     ? []
@@ -14,7 +20,7 @@ const tampilUsername = (user = getLocalStorage()) =>{
     console.log(user);
     
     showUsername.innerHTML = ` <a class="dropdown-item" href="#">${user.username}</a>
-    <a class="dropdown-item" href="index.html">Logout</a>`
+    <a class="dropdown-item" href="#" onclick="logout(event)">Logout</a>`
 }
 
 const getUserId = (userId = getLocalStorage()) => {
@@ -87,6 +93,13 @@ const editMovies = async(event)=>{
         location.reload();
     }
     
+}
+
+const logout = (event) => {
+    event.preventDefault();
+    localStorage.setItem('isLogin', false)
+    localStorage.removeItem("userData");
+    window.location.href = `${window.origin}/index.html`
 }
 
 getMovies();

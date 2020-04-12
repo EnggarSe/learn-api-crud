@@ -40,6 +40,7 @@ const userLogin = (event) => {
                 let userCek = JSON.parse(localStorage.getItem('user'));
                 if(userCek==null){
                     localStorage.setItem("userData", JSON.stringify(user[i]))
+                    localStorage.setItem("isLogin", true)
                 }
                 alert("success");
                 window.location.href = `${window.origin}/formMovie.html`
