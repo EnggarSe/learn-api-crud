@@ -1,0 +1,59 @@
+body {
+  background-color: black !important;
+  font-family: 'Bitter', serif !important;
+}
+
+nav {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+}
+
+nav a {
+  color: #EC4D37 !important;
+  font-size: 18px !important;
+}
+
+nav :hover u {
+  font-size: 24px;
+}
+
+nav ul {
+  margin-right: 0px;
+}
+
+nav .nav-item1 a:hover {
+  color: white !important;
+}
+
+nav #username a {
+  font-size: 15px !important;
+}
+
+nav #username :hover {
+  color: black !important;
+}
+
+#mainContainer {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -ms-flex-pack: distribute !important;
+      justify-content: space-around !important;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+  margin-top: 50px;
+  width: 400px;
+  margin-bottom: 20px;
+}
+
+#mainContainer img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+/*# sourceMappingURL=dashboard.css.map */

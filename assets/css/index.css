@@ -1,0 +1,102 @@
+body {
+  background-color: black !important;
+  font-family: 'Bitter', serif !important;
+}
+
+nav {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+}
+
+nav a {
+  color: #EC4D37 !important;
+  font-size: 28px !important;
+}
+
+nav :hover u {
+  color: white !important;
+}
+
+.container {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black !important;
+}
+
+.jumbotron {
+  background-color: black !important;
+}
+
+.jumbotron hr {
+  width: 100%;
+  border-top: 1px solid;
+  color: grey;
+}
+
+.jumbotron img {
+  width: 80%;
+  margin-top: -50px;
+}
+
+.jumbotron p {
+  margin-top: -20px;
+}
+
+.jumbotron button {
+  margin-top: -10px;
+}
+
+#login-form {
+  margin-top: 70px;
+}
+
+#login-form h4 {
+  margin-bottom: 30px;
+}
+
+.vertical-line {
+  border-left: 2px solid gray;
+  margin-top: 60px;
+  height: 230px;
+  margin-right: 10px;
+}
+
+@media screen and (min-width: 579px) and (max-width: 772px) {
+  .vertical-line {
+    border-left: 1px solid white;
+    margin-top: 0;
+    height: 0;
+    margin-right: 0;
+  }
+  #login-form {
+    margin: -30px 0 10px 0;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .vertical-line {
+    border-left: 1px solid white;
+    margin-top: 0;
+    height: 0;
+    margin-right: 0;
+  }
+  #login-form {
+    margin: -30px 0 10px 0;
+  }
+  .jumbotron img {
+    margin-top: 0px;
+  }
+}
+/*# sourceMappingURL=index.css.map */

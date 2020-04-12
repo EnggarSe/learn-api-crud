@@ -1,0 +1,85 @@
+body{
+    background-color: black !important;
+    font-family: 'Bitter', serif !important;
+    
+}
+nav{
+    display: flex !important;
+    justify-content: center !important;
+    a{
+        color : #EC4D37 !important;
+        font-size: 28px !important;
+    }
+    :hover{
+        u{
+            color :white !important;
+        }
+        
+    }
+    
+}
+.container{
+    color: white;
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black !important;
+}
+.jumbotron{
+    background-color: black !important;
+    hr{
+        width: 100%;
+        border-top: 1px solid;
+        color: grey;
+    }
+    img{
+        width: 80%;
+        margin-top: -50px;   
+    }
+    p{
+        margin-top : -20px;
+    }
+    button{
+        margin-top : -10px;
+    }
+}
+#register-form{
+    margin-top : 10px;
+    h4{
+        margin-bottom: 20px;
+    }
+}
+.vertical-line {
+    border-left: 2px solid gray;
+    margin-top : 60px;
+    height: 230px;
+    margin-right: 10px;
+  }
+
+  @media screen and (min-width:579px) and(max-width:772px){
+    .vertical-line {
+        border-left: 1px solid white;
+        margin-top : 0;
+        height: 0;
+        margin-right: 0;
+      }
+      #register-form{
+        margin : -30px 0 10px 0;   
+    }
+  }
+  @media screen and (max-width:578px) {
+    .vertical-line {
+        border-left: 1px solid white;
+        margin-top : 0;
+        height: 0;
+        margin-right: 0;
+      }
+    #register-form{
+        margin : -30px 0 10px 0;   
+    }
+    .jumbotron{
+        img{
+            margin-top:0px;
+        }
+    }
+  }
