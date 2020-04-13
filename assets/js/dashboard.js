@@ -49,6 +49,7 @@ const getMovies = async() => {
                     <div>
                         <button type="submit" id="edit-${element.id}" class="edit-button btn btn-dark" onclick = "editMovies(event)">Edit</button>
                         <button type="submit" id="hapus-${element.id}" class="delete-button btn btn-dark" onclick = "deleteMovies(event)">Hapus</button>
+                        <button type="submit" id="detail-${element.id}" class="delete-button btn btn-dark" onclick = "detailMovies(event)">Detail</button>
                     </div>
                     </div>
                     <div class="card-footer text-muted">
