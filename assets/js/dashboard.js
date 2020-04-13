@@ -140,7 +140,7 @@ const detailMovies = async (event) => {
 const searchMovie = async() => {
     const response = await fetch(urlMovies);
     const result = await response.json();
-    const input = document.getElementById("searchTitle").value;
+    const input = document.getElementById("searchTitle").value.toLowerCase();
     
     
     const filter = result.filter((element) => {
