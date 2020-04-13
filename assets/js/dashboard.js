@@ -3,6 +3,7 @@ const urlUsers = "https://5e8ecf49fe7f2a00165ee9ff.mockapi.io/users"
 const movies = [];
 const tampilan = document.getElementById("mainDetail");
 const detail = document.getElementById("aboutMovie");
+const searchInput = document.getElementById("searchTitle");
 
 let check = localStorage.getItem('isLogin');
 
@@ -20,18 +21,18 @@ const tampilUsername = (user = getLocalStorage()) => {
     let showUsername = document.getElementById("username");
     console.log(user);
 
-    showUsername.innerHTML = ` <a class="dropdown-item" href="#">${user.username}</a>
+    showUsername.innerHTML = ` <a class="dropdown-item" href="profile.html">${user.username}</a>
     <a class="dropdown-item" href="#" onclick="logout(event)">Logout</a>`
 }
 
 const getUserId = (userId = getLocalStorage()) => {
     return userId.id;
 }
-const getMovies = async () => {
+const getMovies = async (filter) => {
     const response = await fetch(urlMovies);
-    const result = await response.json();
+    const result = Array.isArray(filter)? filter : await response.json();
     const userId = getUserId();
-
+    tampilan.innerHTML = "";
     result.forEach(element => {
         movies.push(element)
         if (userId == element.userId) {
@@ -64,9 +65,9 @@ const getMovies = async () => {
 }
 
 const deleteMovies = async (event) => {
-    confirm("Yakin Untuk Menghapus ?")
-    if (confirm == true) {
-        const id = event.target.id.replace("hapus-", "");
+    const status = confirm("Yakin Untuk Menghapus?")
+        if(status==true){
+            const id = event.target.id.replace("hapus-", "");
         console.log(id);
 
         const response = await fetch(`${urlMovies}/${id}`, {
@@ -74,8 +75,7 @@ const deleteMovies = async (event) => {
         })
         await response.json();
         location.reload();
-    }
-
+    } 
 }
 
 const editMovies = async (event) => {
@@ -95,40 +95,33 @@ const editMovies = async (event) => {
                         <button  type="submit" id="update-${result.id}" onclick = "updateMovies(event)" class="btn btn-dark">Update</button>`
 }
 
-const updateMovies = async(event) =>{
+const updateMovies = async (event) => {
     event.preventDefault();
     const title = document.getElementById("edit-title").value;
     const about = document.getElementById("edit-about").value;
     const rating = document.getElementById("edit-rating").value;
     const ratingNum = parseFloat(rating);
     const update = {
-        title,about,rating,
+        title, about, rating,
     };
-    if(ratingNum>=10){
+    if (ratingNum >= 10) {
         alert("Maksimal rating 10")
     }
-    else{
+    else {
         const id = event.target.id.replace("update-", "")
-        const response = await fetch(`${urlMovies}/${id}`,{
-            method : "PUT",
-            headers : {
-                "Content-Type" : "application/json",
+        const response = await fetch(`${urlMovies}/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json",
             },
-            body : JSON.stringify(update),
+            body: JSON.stringify(update),
         });
         await response.json();
         alert("Data Updated !");
         location.reload();
 
     }
-    
-    
-    
-    
-
-
 }
-
 const logout = (event) => {
     event.preventDefault();
     localStorage.setItem('isLogin', false)
@@ -144,5 +137,26 @@ const detailMovies = async (event) => {
     newDiv.innerHTML = `${result.about}`;
 }
 
+const searchMovie = async() => {
+    const response = await fetch(urlMovies);
+    const result = await response.json();
+    const input = document.getElementById("searchTitle").value;
+    
+    
+    const filter = result.filter((element) => {
+        
+        if(element.title.toLowerCase().includes(input)){
+            console.log(element);
+            
+            return element;
+        }
+    });
+    // console.log(filter);
+    
+    getMovies(filter);
+    
+}
+
+searchInput.addEventListener("keyup",searchMovie)
 getMovies();
 tampilUsername()

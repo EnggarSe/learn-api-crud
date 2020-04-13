@@ -18,7 +18,7 @@ const tampilUsername = (user = getLocalStorage()) =>{
     let showUsername = document.getElementById("username");
     console.log(user);
     
-    showUsername.innerHTML = ` <a class="dropdown-item" href="#">${user.username}</a>
+    showUsername.innerHTML = ` <a class="dropdown-item" href="profile.html">${user.username}</a>
     <a class="dropdown-item" href="#" onclick="logout(event)">Logout</a>`
 }
 

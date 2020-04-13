@@ -37,27 +37,7 @@ nav #username :hover {
   color: black !important;
 }
 
-#mainContainer {
-  display: -webkit-box !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-  -ms-flex-pack: distribute !important;
-      justify-content: space-around !important;
-  -webkit-box-orient: horizontal !important;
-  -webkit-box-direction: normal !important;
-      -ms-flex-direction: row !important;
-          flex-direction: row !important;
-  margin-top: 10px;
-  width: 400px;
-  margin-bottom: 20px;
-}
-
-#mainContainer img {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-#searchInput {
+#mainEditProfile {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -67,9 +47,25 @@ nav #username :hover {
   margin-top: 10px;
 }
 
-#searchInput input {
-  width: 300px;
-  background-color: black;
+#mainEditProfile img {
+  width: 50%;
+  height: 35%;
+  margin-left: 90px;
+}
+
+#mainEditProfile h3 {
   text-align: center;
 }
-/*# sourceMappingURL=dashboard.css.map */
+
+#mainEditProfile form {
+  margin-top: 20px;
+}
+
+#mainEditProfile button {
+  width: 100%;
+}
+
+#showProfile {
+  margin-bottom: 30px;
+}
+/*# sourceMappingURL=profile.css.map */

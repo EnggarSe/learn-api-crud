@@ -17,15 +17,11 @@ const getUser = async() => {
         userData.push(element.username);
         passwordData.push(element.password);
         user.push(element)
-    });
-    console.log(user);
-    
-    
+    }); 
 }
 
 const userLogin = (event) => {
     event.preventDefault();
-   
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     var count = 0;
@@ -52,7 +48,5 @@ const userLogin = (event) => {
         }
     }
 }
-
-
 getUser();
 login.addEventListener("submit", userLogin);
