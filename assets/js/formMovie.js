@@ -52,7 +52,7 @@ const addNewMovies = async (event) =>{
     if(title == "" || about == "" || rating == "" || poster =="" ){
         alert("Inputan Tidak Boleh Kosong");
     }
-    if(rating>=10){
+    else if(rating>=10){
         alert("Rating Maksimal 10")
         document.getElementById("rating").value = "";
     }

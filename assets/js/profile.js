@@ -140,7 +140,7 @@ const updateProfile = async (event) => {
     const updateUser = {
         email, username, password, confirmPassword, avatar,
     };
-    if (email == "" || username == "" || password == "" || confirmPassword == "" || avatar == "") {
+    if (email == "" || username == "" || password == "" || confirmPassword == "") {
         alert("Inputan Tidak Boleh Kosong")
     }
     else{
