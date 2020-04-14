@@ -117,7 +117,7 @@ const editProfile = async (event) => {
                     <input type="password" class="form-control" id="passwordUpdate2" placeholder="Confirm Passowrd" >
                 </div>
                 <div class="form-group">
-                    <input type="url" class="form-control" id="avatarUpdate" placeholder="Address Avatar" value = ${element.avatar}" >
+                    <input type="url" class="form-control" id="avatarUpdate" placeholder="Address Avatar" value = ${element.avatar} >
                 </div>
                 <button id="daftar" type="submit" class="btn btn-dark" onclick = "updateProfile(event)" value =>Save</button>
             </form>`
