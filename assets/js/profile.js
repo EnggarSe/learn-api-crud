@@ -119,7 +119,7 @@ const editProfile = async (event) => {
                 <div class="form-group">
                     <input type="url" class="form-control" id="avatarUpdate" placeholder="Address Avatar" >
                 </div>
-                <button id="daftar" type="submit" class="btn btn-dark" onclick = "updateProfile(event)">Save</button>
+                <button id="daftar" type="submit" class="btn btn-dark" onclick = "updateProfile(event)" value ="${element.avatar}">Save</button>
             </form>`
             showProfile.appendChild(newDiv)
         }
@@ -140,7 +140,7 @@ const updateProfile = async (event) => {
     const updateUser = {
         email, username, password, confirmPassword, avatar,
     };
-    if (email == "" || username == "" || password == "" || confirmPassword == "") {
+    if (email == "" || username == "" || password == "" || confirmPassword == "" || avatar=="") {
         alert("Inputan Tidak Boleh Kosong")
     }
     else{
